@@ -12,6 +12,8 @@ ScreenRes has been written to be a replacement for [Qres](http://qres.sourceforg
 
 The main difference is, that there is no need to install ScreenRes, you can just use screenres.exe. Note, that there are also portable QRes.exe-files out there in the Internet. I tried one, but it didn't work for one of my Windows-machines. Also, I wasn't able to find a source-code of this QRes.exe-file, so I didn't trust it.
 
+Another difference is, that ScreenRes first clones all attaches displays, before it performs another action.
+
 ## Usage
 
 Set the screen-resolution to nnn x mmm pixels:

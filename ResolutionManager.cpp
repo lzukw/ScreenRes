@@ -12,7 +12,6 @@ using namespace std;
 
 ResolutionManager::ResolutionManager()
 {
-
   // Get current display resolution and its modeid and store it in _currentResolution and
   // in _initialResolution
   bool success = EnumDisplaySettingsA(NULL, ENUM_CURRENT_SETTINGS, &m_currentResolution);
@@ -35,11 +34,6 @@ ResolutionManager::ResolutionManager()
     *ptrToNewResoltion = resolution; // In C++ this should be a copy of the whole struct (copy by value)
     m_resolutions.push_back(ptrToNewResoltion);
 
-    if (m_areResolutionsEqual(&resolution, &m_currentResolution))
-    {
-      m_currentResolutionModeNum = iModeNum; 
-      m_initialResolutionModeNum = iModeNum;
-    }
     iModeNum++;
   }
 }
@@ -103,6 +97,11 @@ bool ResolutionManager::setResolution(string resolutionToSet)
   
   m_currentResolution = *modeToSet;
   return true;
+}
+
+void ResolutionManager::cloneScreens()
+{
+  LONG rv = SetDisplayConfig(0, NULL, 0, NULL, SDC_TOPOLOGY_CLONE | SDC_APPLY);
 }
 
 

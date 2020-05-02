@@ -58,14 +58,17 @@ public:
    */
   virtual bool setResolution(std::string resolutionToSet);
 
+  /**
+   * Clone primary monitor to secondary (if present)
+   */
+  static void cloneScreens();
+
 
 protected:
 
   DEVMODEA m_initialResolution;
-  DWORD m_initialResolutionModeNum;
 
   DEVMODEA m_currentResolution;
-  DWORD m_currentResolutionModeNum;
 
   std::vector<DEVMODEA*> m_resolutions;
 

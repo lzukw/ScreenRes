@@ -25,7 +25,7 @@ public:
    * One of these enum-values is returned by getMode() to inidicate the
    * action desired by the user.
    */
-  enum Mode 
+  enum class Mode 
   {
     SHOW_CURRENT_DISPLAY_SETTING,
     LIST_ALL_DISPLAY_MODES,

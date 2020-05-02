@@ -24,10 +24,12 @@ int main(int argc, char* argv[])
   switch (clp.getMode())
   {
   case CommandLineParser::Mode::SHOW_CURRENT_DISPLAY_SETTING:
+    ResolutionManager::cloneScreens();
     cout << rm.getCurrentResolution(false) << endl; 
     break;
 
   case CommandLineParser::Mode::LIST_ALL_DISPLAY_MODES:
+    ResolutionManager::cloneScreens();
     resolutions = rm.getAllResolutions(false);
     for (size_t i = 0; i < resolutions.size(); i++)
     {
@@ -36,6 +38,7 @@ int main(int argc, char* argv[])
     break;
 
   case CommandLineParser::Mode::SET_DISPLAY_MODE:
+    ResolutionManager::cloneScreens();
     resolutionToSet << clp.getX() << "x" << clp.getY();
     rm.setResolution(resolutionToSet.str());
     break;
