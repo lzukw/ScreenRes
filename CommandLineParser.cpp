@@ -29,7 +29,7 @@ CommandLineParser::CommandLineParser(int argc, char* argv[])
   // Process all Arguments
   for (size_t i = 1; i < m_argv.size(); i++)
   {
-    int len = strlen(m_argv[i]);
+    size_t len = strlen(m_argv[i]);
     if (len < 2 || (m_argv[i][0] != '/' && m_argv[i][0] != '-') )
     {
       printHelpAndExit(EXIT_FAILURE);
