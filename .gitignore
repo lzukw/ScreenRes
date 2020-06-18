@@ -31,7 +31,7 @@
 *.lib
 
 # Executables
-*.exe
+########### *.exe ##commented out to allow prebuilt executable in repo ########################
 *.out
 *.app
 
